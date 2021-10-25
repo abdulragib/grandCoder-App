@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:io';
-import 'dart:async';
 double progress = 0;
 void main() {
   runApp(
@@ -12,7 +10,6 @@ void main() {
     ),
   );
 }
-
 
 class MyApp extends StatefulWidget {
   @override
@@ -71,10 +68,11 @@ class _runAppState extends State<MyApp> {
                       onWebViewCreated: (controller) {
                         this.controller = controller;
                       },
-                      onProgress: (progressone) =>
+                      onProgress: (progressOne) =>
                           setState(() =>
-                          progress = progressone / 100,
+                          progress = progressOne / 100,
                           ),
+
                     ),
                   ),
                 ],
